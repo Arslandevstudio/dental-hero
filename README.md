@@ -2,6 +2,8 @@
 
 Hero-экран лендинга стоматологии. Стек: Vite + three.js, без фреймворков.
 
+**Сайт:** https://arslandevstudio.github.io/dental-hero/ (собирается и публикуется GitHub Actions при каждом push в `main`, см. `.github/workflows/deploy.yml`).
+
 ```bash
 npm install
 npm run dev      # http://localhost:5173

@@ -6,6 +6,7 @@ import { createGround } from './ground.js';
 import { loadToothGeometry, createGlass } from './tooth.js';
 
 const qs = new URLSearchParams(location.search);
+const BASE = import.meta.env.BASE_URL; // './' — the site may live under a sub-path
 const CLAY = qs.has('clay'); // matte material to judge the shape
 const STILL = qs.has('still'); // freeze animation (screenshots)
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -32,7 +33,7 @@ const YAW0 = THREE.MathUtils.degToRad(qs.get('yaw') ? Number(qs.get('yaw')) : 12
 const SWAY = THREE.MathUtils.degToRad(15);
 const PERIOD = 8;
 
-const skyTex = await new THREE.TextureLoader().loadAsync(mobile.matches ? '/bg/sky-sm.jpg' : '/bg/sky.jpg');
+const skyTex = await new THREE.TextureLoader().loadAsync(BASE + (mobile.matches ? 'bg/sky-sm.jpg' : 'bg/sky.jpg'));
 skyTex.colorSpace = THREE.SRGBColorSpace;
 skyTex.anisotropy = 4;
 skyTex.generateMipmaps = true;
@@ -52,7 +53,7 @@ const tooth = new THREE.Group();
 const pivot = new THREE.Group(); // rotates around the root base so the roots stay planted
 tooth.add(pivot);
 scene.add(tooth);
-const geometry = await loadToothGeometry('/models/tooth.bin');
+const geometry = await loadToothGeometry(BASE + 'models/tooth.bin');
 const glass = new THREE.Mesh(geometry, createGlass(env, { clay: CLAY, chrome: qs.has('chrome') }));
 glass.scale.setScalar(TOOTH_H);
 pivot.add(glass);
