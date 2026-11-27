@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AQ TIS — Dental Clinic</title>
+    <meta name="description" content="Confident smiles start with expert care. Modern dentistry in a calm, light-filled clinic." />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="/models/tooth.bin" as="fetch" crossorigin />
+  </head>
+  <body>
+    <main class="hero">
+      <canvas id="scene" aria-hidden="true"></canvas>
+      <div class="hero__veil" aria-hidden="true"></div>
+
+      <div class="hero__content">
+        <a class="logo" href="/" aria-label="AQ TIS dental clinic, home">
+          <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+            <path
+              d="M7.2 3.2c1.7 0 2.9.9 4.8.9s3.1-.9 4.8-.9c2.6 0 4.2 2.1 4.2 4.9 0 2.6-1.1 4.2-1.8 6-.8 2-1 6.6-2.9 6.6-1.6 0-1.6-4.6-2.7-6.1-.4-.5-.9-.5-1.6-.5s-1.2 0-1.6.5c-1.1 1.5-1.1 6.1-2.7 6.1-1.9 0-2.1-4.6-2.9-6.6-.7-1.8-1.8-3.4-1.8-6 0-2.8 1.6-4.9 4.2-4.9Z"
+              fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+          </svg>
+          <span class="logo__name">AQ TIS</span>
+          <span class="logo__tag">Dental clinic</span>
+        </a>
+
+        <h1 class="title">
+          <span class="line"><span>Confident</span></span>
+          <span class="line"><span>Smiles</span></span>
+          <span class="line"><span>Start</span></span>
+          <span class="line"><span>With</span></span>
+          <span class="line"><span>Expert</span></span>
+          <span class="line"><span>Care</span></span>
+        </h1>
+
+        <div class="hero__foot">
+          <p class="caption">Gentle, modern dentistry in a calm, light-filled clinic — from check-ups to implants.</p>
+          <a class="btn" href="#book">Book an appointment</a>
+        </div>
+      </div>
+
+      <div class="tooth-slot" aria-hidden="true"></div>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
